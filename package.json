@@ -1,0 +1,29 @@
+{
+  "name": "seven-errors-live",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev": "concurrently -n api,web -c magenta,cyan \"npm run dev -w @seven-errors/api\" \"npm run dev -w @seven-errors/web\"",
+    "build": "npm run typecheck && npm run build -w @seven-errors/web && npm run build -w @seven-errors/api",
+    "test": "vitest run",
+    "smoke": "node scripts/smoke-test.mjs",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "seed": "tsx scripts/seed.ts"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "@types/node": "^24.5.2",
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
+    "concurrently": "^9.2.1",
+    "eslint": "^9.36.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.44.1",
+    "vitest": "^5.0.2"
+  },
+  "engines": { "node": ">=20" }
+}

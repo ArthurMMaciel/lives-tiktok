@@ -1,0 +1,24 @@
+{
+  "name": "@seven-errors/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc -p tsconfig.build.json"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.1.0",
+    "@fastify/websocket": "^11.2.0",
+    "@seven-errors/application": "*",
+    "@seven-errors/domain": "*",
+    "@seven-errors/shared": "*",
+    "dotenv": "^17.2.2",
+    "fastify": "^5.6.1",
+    "pg": "^8.16.3"
+  },
+  "optionalDependencies": {
+    "tiktok-live-connector": "2.5.0"
+  },
+  "devDependencies": { "@types/pg": "^8.15.5" }
+}
